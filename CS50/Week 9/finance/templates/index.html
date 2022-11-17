@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Overview
+{% endblock %}
+
+{% block main %}
+
+    <h1>Account Overview</h1>
+    <div>
+        Cash Available: {{ cash | usd }}
+    </div>
+    <div>
+        Total Stock Holdings: {{ stock_value | usd }}
+    </div>
+    <div>
+        Portfolio Value: {{ (cash + stock_value) | usd }}
+    </div>
+    <h3>Stock Holdings</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Stock Ticker</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in stocks %}
+                {% if line["shares"] != 0 %}
+                    <tr>
+                        <td>{{ loop.index0 }}</td>
+                        <td>{{ line["symbol"] | upper }}</td>
+                        <td>{{ line["price"] | usd }}</td>
+                        <td>{{ line["shares"] }}</td>
+                        <td>{{ line["total"] }}</td>
+                    </tr>
+                {% endif %}
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+
+{% endblock %}

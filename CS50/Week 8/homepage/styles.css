@@ -1,0 +1,41 @@
+body {
+    background-color: #e3f2fd;
+}
+
+header {
+    background-color: LightSkyBlue;
+    padding: 5px;
+    border: solid;
+    border-width: 4px;
+    border-color: Gainsboro;
+    font-family: Helvetica;
+    font-style: bold
+}
+
+h2 {
+    padding: 5px
+}
+
+.navbar {
+    background-color: LightSkyBlue;
+    border: solid;
+    border-width: 0 4px 4px 4px;
+    border-color: Gainsboro;
+}
+
+p {
+    padding: 5px;
+    font-size: 14pt;
+}
+
+li {
+    font-size: 120%;
+}
+
+.poster {
+    display: none;
+}
+
+#poster1 {
+    display: block;
+}

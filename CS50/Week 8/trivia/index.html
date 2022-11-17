@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function correct(event)
+            {
+                var trigger = event.srcElement;
+                trigger.style.backgroundColor = "green";
+                document.getElementById("q1_feedback").innerText = "Correct!";
+            }
+
+            function incorrect(event)
+            {
+                var trigger = event.srcElement;
+                trigger.style.backgroundColor = "red";
+                document.getElementById("q1_feedback").innerText = "Incorrect!";
+            }
+
+            function submit(event)
+            {
+                var trigger = event.srcElement;
+                var answer = document.querySelector("#q2_answer").value;
+                if (answer == "racecar")
+                {
+                    document.querySelector("#q2_answer").style.backgroundColor = "green";
+                    document.getElementById("q2_feedback").innerText = "Correct!";
+                }
+                else
+                {
+                    document.querySelector("#q2_answer").style.backgroundColor = "red";
+                    document.getElementById("q2_feedback").innerText = "Incorrect!";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What color is a blue duck?</h3>
+                <button type="button" onclick="incorrect(event)">fire truck red</button>
+                <button type="button" onclick="correct(event)">blue</button>
+                <button type="button" onclick="incorrect(event)">pine forest green</button>
+                <button type="button" onclick="incorrect(event)">orangish-purple</button>
+                <p id="q1_feedback"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is "racecar" spelled backwards?</h3>
+                <input id="q2_answer" autocomplete="off" placeholder="Answer">
+                <button type="button" onclick="submit(event)">submit</button>
+                <p id="q2_feedback"></p>
+            </div>
+        </div>
+    </body>
+</html>

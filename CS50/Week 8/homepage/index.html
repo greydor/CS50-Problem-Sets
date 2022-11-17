@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">        </script>
+        <script>
+            const poster_ids = ["poster1", "poster2", "poster3", "poster4"];
+            let poster_count = 0;
+
+            document.addEventListener("DOMContentLoaded", function() {
+                let posters = document.querySelectorAll(".poster");
+                for (const poster of posters)
+                {
+                    poster.addEventListener("click", function() {
+                        poster.style.display = "none";
+                        poster_count++;
+                        if (poster_count >= 4)
+                        {
+                            poster_count = 0;
+                        }
+                        next_poster = document.querySelector("#" + poster_ids[poster_count]);
+                        next_poster.style.display = "block";
+
+                    })
+                }
+
+            })
+
+
+
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <h1>Movie Rankings Site</h1>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+
+
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html"><strong>HOME</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="drama.html"><strong>DRAMA</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="action.html"><strong>ACTION</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comedy.html"><strong>COMEDY</strong></a>
+                    </li>
+                  </ul>
+
+            </div>
+        </nav>
+
+        <p>Welcome to my page! I have organized my favorite movies by genre check it out.</p>
+        <p>Click on the picture below to rotate between some of my favorite movies!</p>
+        <img class="poster" id="poster1" src="fargo.jpg" alt="Fargo movie poster" width="400">
+        <img class="poster" id="poster2" src="city%20of%20god.png" alt="City of God movie poster" width="400">
+        <img class="poster" id="poster3" src="memento.jpg" alt="Memento movie poster" width="400">
+        <img class="poster" id="poster4" src="requiem%20for%20a%20dream.jpg" alt="Requiem for a Dream movie poster" width="400">
+    </body>
+</html>
