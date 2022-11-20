@@ -1,0 +1,14 @@
+{
+    "favorites.groups": [
+        "Default",
+        "main"
+    ],
+    "favorites.currentGroup": "Default",
+    "favorites.sortOrder": "DESC",
+    "favorites.resources": [
+        {
+            "filePath": "CS50",
+            "group": "Default"
+        }
+    ]
+}
